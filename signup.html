@@ -7,7 +7,7 @@
       name="description"
       content="Login system, built with HTML, CSS and JavaScript"
     />
-    <title>Login - Login system</title>
+    <title>Sign Up - Login system</title>
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="log-in d-flex justify-content-center align-items-center">
+    <div class="sign-up d-flex justify-content-center align-items-center">
       <div
         class="container d-flex direction-column justify-content-center align-items-center"
       >
@@ -30,16 +30,25 @@
           <span class="logo__text">Login system</span></a
         >
         <div
-          class="log-in__form-wrapper d-flex direction-column bg-surface-1 rounded-8"
+          class="sign-up__form-wrapper d-flex direction-column bg-surface-1 rounded-8"
         >
-          <h1 class="log-in__header">Log In to the system</h1>
+          <h1 class="sign-up__header">Sign Up to the system</h1>
 
-          <form
-            action="./welcome.html"
-            class="log-in__form d-flex direction-column"
-          >
+          <form class="sign-up__form d-flex direction-column">
             <div class="input-group">
-              <label for="userEmail">Your email</label>
+              <label for="userName">Full name</label>
+              <input
+                type="text"
+                name="user-name"
+                id="userName"
+                class="form__user-name input-field"
+                placeholder="e.g. Ahmed Mohamed"
+              />
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="input-group">
+              <label for="userEmail">Email</label>
               <input
                 type="email"
                 name="user-email"
@@ -62,19 +71,14 @@
               <div class="invalid-feedback"></div>
             </div>
 
-            <a href="#" class="form__forget-password text-link"
-              >Forgot password?</a
-            >
-
-            <button type="submit" class="btn btn--log-in">
-              <i class="ph ph-sign-in btn__icon"></i>
-              <span class="btn__text">Log In</span>
+            <button type="submit" class="btn btn--sign-up">
+              <span class="btn__text">Sign Up</span>
             </button>
 
             <p class="form__sign-up-text">
-              Don’t have an account?
-              <a href="./signup.html" class="form__sign-up-link text-link"
-                >Sign up</a
+              Already have an account?
+              <a href="./index.html" class="form__sign-up-link text-link"
+                >Login</a
               >
             </p>
           </form>

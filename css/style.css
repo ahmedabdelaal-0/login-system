@@ -1,0 +1,347 @@
+/* ----------------- Variables ---------------- */
+:root {
+  color-scheme: dark;
+  /* Colors */
+  --color-accent: #2563eb;
+  --color-accent-hover: #1d4ed8;
+  --color-background: #111827;
+  --color-surface-1: #1f2937;
+  --color-surface-2: #374151;
+  --color-text-1: #ffffff;
+  --color-text-2: #d1d5db;
+  --color-text-3: #9ca3af;
+  --color-text-accent: var(--color-accent);
+  --color-text-link: #3b82f6;
+  --color-text-inverse: #111827;
+  --color-border-1: #374151;
+  --color-border-2: #4b5563;
+  --color-success: #0e9f6e;
+  --color-danger: #f05252;
+
+  --selection-background: var(--color-accent);
+  --selection-color: #ffffff;
+
+  /* Typography */
+  --font-fallback: BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --ff-primary: 'Inter';
+  --ff-body: var(--ff-primary), var(--font-fallback);
+
+  --line-height-base: 1.2;
+  --line-height-intermediate: 1.6;
+
+  --fs-80: 0.75rem;
+  --fs-90: 0.875rem;
+  --fs-100: 1rem;
+  --fs-200: 1.125rem;
+  --fs-300: 1.25rem;
+  --fs-400: 1.5rem;
+  --fs-500: 3rem;
+  --fs-600: 4rem;
+
+  --fs-body: var(--fs-100);
+  --fs-nav: var(--fs-90);
+  --fs-button: var(--fs-90);
+
+  --fw-light: 300;
+  --fw-regular: 400;
+  --fw-semi-bold: 500;
+  --fw-bold: 600;
+
+  /* Animation */
+  --animation-duration-01: 0.3s;
+  --animation-duration-02: 0.5s;
+
+  /* Sizes */
+  --size-70: 0.25rem;
+  --size-80: 0.5rem;
+  --size-90: 0.75rem;
+  --size-100: 1rem;
+  --size-200: 1.25rem;
+  --size-300: 1.5rem;
+  --size-400: 1.75rem;
+  --size-500: 2rem;
+  --size-600: 2.5rem;
+  --size-700: 3rem;
+  --size-800: 5rem;
+}
+
+/* ------------------ General ----------------- */
+html {
+  scroll-padding-top: 4rem;
+}
+
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--line-height-base);
+  color: var(--color-text-1);
+  background-color: var(--color-background);
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: var(--selection-background);
+  color: var(--selection-color);
+}
+
+/* -------------- Utility classes ------------- */
+/* Typography */
+.text-1 {
+  color: var(--color-color-text-1);
+}
+
+.text-2 {
+  color: var(--color-text-color-text-2);
+}
+
+.text-3 {
+  color: var(--color-text-color-text-3);
+}
+
+.text-accent {
+  color: var(--color-text-accent);
+}
+
+.text-link {
+  color: var(--color-text-link);
+}
+
+.text-inverse {
+  color: var(--color-text-inverse);
+}
+
+.fw-semibold {
+  font-weight: 500;
+}
+
+.fw-bold {
+  font-weight: 600;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Backgrounds colors */
+.bg-background {
+  background-color: var(--color-background);
+}
+
+.bg-surface-1 {
+  background-color: var(--color-surface-1);
+}
+
+.bg-surface-2 {
+  background-color: var(--color-surface-2);
+}
+
+.bg-accent {
+  background-color: var(--color-accent);
+}
+
+/* Layout */
+.container {
+  --max-width: 73.125rem;
+  width: min(var(--max-width), 100%);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.direction-column {
+  flex-direction: column;
+}
+
+/* Borders */
+.rounded-8 {
+  border-radius: 8px;
+}
+
+/* ---------------- Components ---------------- */
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-80);
+}
+
+.input-group label {
+  font-size: var(--fs-90);
+  font-weight: var(--fw-semi-bold);
+}
+
+.input-group input {
+  background-color: var(--color-surface-2);
+  padding: var(--size-80) var(--size-90);
+  border: 1px solid var(--color-border-2);
+  border-radius: 8px;
+  outline: 1px solid transparent;
+}
+
+.input-group input:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0px 0px 0px 1px var(--color-accent);
+}
+
+/* TODO: Review */
+/* .input-group input.is-valid {
+  border-color: var(--color-success);
+  box-shadow: none;
+} */
+
+.input-group input.is-invalid {
+  border-color: var(--color-danger);
+  box-shadow: none;
+}
+
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--size-70);
+  font-size: var(--fs-90);
+  font-weight: var(--fw-semi-bold);
+  color: #ffffff;
+  background-color: var(--color-accent);
+  padding: var(--size-80) var(--size-90);
+  border: none;
+  border-radius: 8px;
+  transition: background-color var(--animation-duration-01);
+}
+
+.btn:hover {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--log-out {
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 1px #ffffff inset;
+  transition:
+    color var(--animation-duration-01),
+    box-shadow var(--animation-duration-01);
+}
+
+.btn--log-out:hover {
+  color: var(--color-danger);
+  background-color: transparent;
+  box-shadow: 0px 0px 0px 1px var(--color-danger) inset;
+}
+
+/* ----------------- My styles ---------------- */
+
+/* -------------------------------------------- */
+/*            Log in & sign up pages            */
+/* -------------------------------------------- */
+.log-in,
+.sign-up {
+  min-height: 100vh;
+  padding-block: 64px;
+}
+
+.logo {
+  font-weight: var(--fw-bold);
+  gap: var(--size-70);
+}
+
+.log-in .logo,
+.sign-up .logo {
+  font-size: var(--fs-400);
+  margin-bottom: var(--size-400);
+}
+
+/* -------------------------------------------- */
+/*            Log in & sign up forms            */
+/* -------------------------------------------- */
+.log-in__form-wrapper,
+.sign-up__form-wrapper {
+  width: min(100%, 460px);
+  padding: var(--size-300);
+  gap: var(--size-500);
+  border: 1px solid var(--color-border-1);
+}
+
+.log-in__header,
+.sign-up__header {
+  font-size: var(--fs-300);
+  font-weight: 700;
+}
+
+.log-in__form,
+.sign-up__form {
+  gap: var(--size-100);
+}
+
+:is(.form__forget-password, .form__sign-up-link):is(:link, :visited),
+.form__sign-up-text {
+  font-size: var(--fs-90);
+}
+
+:is(.form__forget-password, .form__sign-up-link):is(:link, :visited) {
+  font-weight: var(--fw-semi-bold);
+}
+
+:is(.form__forget-password, .form__sign-up-link):is(:hover, :focus) {
+  text-decoration: underline;
+}
+
+.invalid-feedback {
+  /* display: none; */
+  font-size: 0.8125rem;
+  color: var(--color-danger);
+}
+
+@media (min-width: 48em) {
+  .log-in__form-wrapper,
+  .sign-up__form-wrapper {
+    padding: var(--size-400);
+  }
+
+  .log-in__header,
+  .sign-up__header {
+    font-size: var(--fs-400);
+  }
+}
+
+/* -------------------------------------------- */
+/*                 Welcome page                 */
+/* -------------------------------------------- */
+.welcome {
+  min-height: 100vh;
+}
+
+.header {
+  height: 64px;
+}
+
+.welcome .logo {
+  font-size: var(--fs-200);
+}
+
+.btn--log-out > * {
+  pointer-events: none;
+}
+
+.welcome .main {
+  padding-top: var(--size-800);
+}
+
+.welcome-name {
+  font-size: var(--fs-500);
+  margin-bottom: var(--size-100);
+}
